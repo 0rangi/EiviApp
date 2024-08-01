@@ -18,10 +18,10 @@ export function DrawerNavigation() {
             headerStyle: { backgroundColor: colors.secondary},
                 headerTintColor: colors.primary,
                 drawerStyle: {
-                    backgroundColor: colors.secondary,
+                    backgroundColor: colors.primary,
                 },
-                drawerActiveTintColor: colors.primary,
-                drawerInactiveTintColor: colors.primary
+                drawerActiveTintColor: colors.third,
+                drawerInactiveTintColor: colors.third
             
         }}>
             <Drawer.Screen name='Tab' component={TabNavigation}
@@ -29,7 +29,7 @@ export function DrawerNavigation() {
                     drawerLabel: 'Perfil',
                     headerTitle: 'Perfil',
                     drawerIcon: () => (
-                        <Ionicons name="person" size={24} color={colors.primary} />
+                        <Ionicons name="person" size={24} color={colors.third} />
                     ),
                 }}
             />

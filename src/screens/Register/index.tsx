@@ -19,15 +19,17 @@ export interface IRegister {
 {/* pag 2*/}
 export function Register({ navigation }: LoginTypes) {
     const [data, setData] = useState<IRegister>();
+    const {signIn,setLoading}=useAuth()
     async function handleRegister() {
         if (data?.email && data.name && data.password) {
             setLoading(true)
             try {
-                const response = await apiUser.resgister(data)
-                Alert.alert(`${response.data.name}cadastrado!!!`)
+                const response = await apiUser.register(data)
+                Alert.alert(`${response.data.name} cadastrado!!!`)
                 navigation.navigate("Login")
             } catch(error){
                 const err = error as AxiosError
+                console.log(err)
                 const msg = err.response?.data as string
                 Alert.alert(msg)
             }

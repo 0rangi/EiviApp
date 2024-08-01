@@ -15,6 +15,7 @@ export interface IAuthenticate {
 
 export function Login({ navigation }: LoginTypes) {
     const [data, setData] = useState<IAuthenticate>();
+    const {signIn,setLoading}=useAuth()
     async function handleSignIn() {
         if (data?.email && data.password) {
             try {
@@ -22,6 +23,7 @@ export function Login({ navigation }: LoginTypes) {
             }catch (error) {
                 const err = error as AxiosError
                 const msg = err.response?.data as string
+                console.log(msg)
                 Alert.alert(msg)
             }
             setLoading(false)

@@ -1,8 +1,8 @@
-import {api} from "../../api"
+import { api } from "../../api"
 
 export interface IMessage {
-title: string
-message: string
+    title?: string
+    message?: string
 
 }
 
@@ -12,13 +12,21 @@ export interface IResponseMessage {
     title: string
     message: string
     created_at: string
+    user:{
+        id: number
+        name: string
+        email: string
     }
-    
-    class MessageData {
-index() {
-return api.get<IResponseMessage[]>('/message')
 }
 
+class MessageData {
+    index() {
+        return api.get<IResponseMessage[]>('/message')
     }
 
-    export default new MessageData()
+    store(data: IMessage) {
+        return api.post<IResponseMessage[]>('/message', data)
+    }
+}
+
+export default new MessageData()

@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
-{/* as unicas coisas exportadas nessas pag do screens tem esse nome*/}
+
 import { Login } from '../screens/Login';
 import { Register } from '../screens/Register';
 import { Perfil } from '../screens/Perfil';

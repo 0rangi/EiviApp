@@ -21,6 +21,8 @@ buttonThird:{
 },
 
 text:{
+   
+    marginHorizontal:10,
     fontFamily: 'PaytoneOne_400Regular',
     fontSize: 20,
     textAlign: 'center',

@@ -18,10 +18,10 @@ export function TabNavigation() {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveBackgroundColor: colors.secondary,
+                tabBarActiveBackgroundColor: colors.primary,
                 tabBarActiveTintColor: colors.primary,
                 headerShown: false,
-                tabBarInactiveBackgroundColor: colors.secondary,
+                tabBarInactiveBackgroundColor: colors.third,
                 tabBarInactiveTintColor: colors.primary,
             }}
         >
@@ -29,14 +29,14 @@ export function TabNavigation() {
             <Tab.Screen name='Perfil' component={Perfil}
                 options={{
                     tabBarIcon: () => (
-                        <Ionicons name="person" size={24} color={ colors.primary } /> 
+                        <Ionicons name="person" size={24} color={ colors.third } /> 
                     ),
 }}
 />
             <Tab.Screen name='Mensagem' component={Mensagem}
                 options={{
                     tabBarIcon: () => (
-                        <AntDesign name="message1" size={24} color={ colors.primary } />
+                        <AntDesign name="message1" size={24} color={ colors.third } />
 ),
 }}
 />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MessageTypes } from "../../navigations/message.navigation";
 import { Alert, KeyboardAvoidingView, Text, TextInput, View } from "react-native";
 import { colors } from "../../styles/globalstyle";
-import { ComponentButtonInterface } from "../../components";
+import { ButtonInterface } from "../../components/ButtonInterface";
 import { IMessage } from "../../services/data/Message";
 import { useAuth } from "../../hook/auth";
 import { AxiosError } from "axios";
@@ -10,7 +10,7 @@ import { apiMessage } from "../../services/data";
 import { styles } from "./styles";
 import React from "react";
 
-export function CadMessage({ navigation }: MessageTypes) {
+export function CadMensagem({ navigation }: MessageTypes) {
     const [data, setData] = useState<IMessage>()
     const { setLoading } = useAuth()
     function handleChange(item: IMessage) {
@@ -26,8 +26,9 @@ export function CadMessage({ navigation }: MessageTypes) {
                 navigation.navigate("Message")
             } catch (error) {
                 const err = error as AxiosError
-                const msg = err.response?.data as string
-                Alert.alert(msg)
+                console.log(err)
+                // const msg = err.response?.data as string
+                // Alert.alert(msg)
             }
             setLoading(false)
         } else {
@@ -49,16 +50,18 @@ export function CadMessage({ navigation }: MessageTypes) {
                 </View>
                 <View style={styles.formRow}>
                     <TextInput
-                        placeholderTextColor={colors.third)
-                    style={styles.input)
+                        placeholderTextColor={colors.third}
+                    style={styles.input}
                     placeholder="Mensagem"
                     multiline={true}
                     numberOfLines={4}
                     onChangeText={(i) => handleChange({ message: i })}
 />
                 </View>
-                <ComponentButtonInterface title='Enviar' type='primary'
+                <ButtonInterface title='Enviar' type='primary'
                     onPressI={handleCadMessage} />
-                <ComponentButtonInterface title='Voltar' type='secondary' onPressI={() => navigation.navigate("Message")} />
+                <ButtonInterface title='Voltar' type='secondary' onPressI={() => navigation.navigate("Message")} />
             </KeyboardAvoidingView>
         </View>
+    )
+}

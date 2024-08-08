@@ -4,6 +4,7 @@ import { Mensagem } from '../screens/Mensagem';
 import { Perfil } from '../screens/Perfil';
 import { colors } from '../styles/globalstyle';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { MessageNavigation } from './message.navigation';
 
 type TabParamList = {
     Perfil: undefined
@@ -33,7 +34,7 @@ export function TabNavigation() {
                     ),
 }}
 />
-            <Tab.Screen name='Mensagem' component={Mensagem}
+            <Tab.Screen name='Mensagem' component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
                         <AntDesign name="message1" size={24} color={ colors.third } />

@@ -8,6 +8,7 @@ import { useAuth } from "../../hook/auth";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../../styles/globalstyle";
 import { MessageTypes } from "../../navigations/message.navigation"
+import { AxiosError } from "axios";
 
 
 export function Mensagem({ navigation }: MessageTypes) {

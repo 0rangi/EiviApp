@@ -19,5 +19,9 @@ export const styles = StyleSheet.create({
     },
     sociaisText: {
         marginLeft: 5
+    },
+    ButtonInterface: {
+        padding: 20,
+        fontSize: 20,
     }
 })

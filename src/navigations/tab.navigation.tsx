@@ -30,14 +30,14 @@ export function TabNavigation() {
             <Tab.Screen name='Perfil' component={Perfil}
                 options={{
                     tabBarIcon: () => (
-                        <Ionicons name="person" size={24} color={ colors.third } /> 
+                        <Ionicons name="person" size={24} color={ colors.fourth } /> 
                     ),
 }}
 />
             <Tab.Screen name='Mensagem' component={MessageNavigation}
                 options={{
                     tabBarIcon: () => (
-                        <AntDesign name="message1" size={24} color={ colors.third } />
+                        <AntDesign name="message1" size={24} color={ colors.fourth } />
 ),
 }}
 />

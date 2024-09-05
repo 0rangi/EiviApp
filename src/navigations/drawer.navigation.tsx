@@ -5,9 +5,12 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { TabNavigation } from './tab.navigation';
 import { Camera } from '../screens/Camera';
 import { Imagens } from '../screens/Imagens';
+import { QrCode } from '../screens/Qrcode';
 type DrawerParamList = {
     Tab: undefined
     Camera: undefined
+    QrCode: undefined
+    Imagem: undefined
 }
 type DrawerScreenNavigationProp = DrawerNavigationProp<DrawerParamList, 'Tab'>
 export type DrawerTypes = {
@@ -48,6 +51,13 @@ export function DrawerNavigation() {
                         <FontAwesome name="picture-o" size={24} color={colors.third} />
                     ),
                 }} />
+
+            <Drawer.Screen name='QrCode' component={QrCode}
+                options={{
+                    drawerIcon: () => (
+                        <FontAwesome name="qrcode" size={24} color={colors.third} />
+                    ),
+                }}       />
 
         </Drawer.Navigator>
 
